@@ -8,6 +8,7 @@ import Header from './components/header/header.component';
 import SignInAndSignUpPage from './components/sign-in-and-sign-up/sign-in-and-sign-up.component';
 import {auth, createUserProfileDocument } from './firebase/firebase.utils';
 
+
 class App extends React.Component {
   constructor() {
     super();
@@ -30,8 +31,6 @@ class App extends React.Component {
               id: snapShot.id,
               ...snapShot.data()
             }
-          }, () => {
-            console.log(this.state);            
           })
         })
       }

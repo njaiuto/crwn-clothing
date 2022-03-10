@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { connect } from 'react-redux';
 
 import { ReactComponent as Logo } from '../../assets/crown.svg';
 import './header.styles.scss';
@@ -28,4 +29,12 @@ const Header = ({ currentUser }) => (
     </div>
 )
 
-export default Header;
+const mapStateToProps = state => ({
+  currentUser: state.user.currentUser
+})
+
+// connect returns a function that takes a component, so this syntax is correct
+// we could have done:
+// const f = connect(mapStateToProps);
+// export default f(Header);
+export default connect(mapStateToProps)(Header);

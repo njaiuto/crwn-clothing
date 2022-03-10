@@ -34,15 +34,19 @@ const Header = ({ currentUser, hidden }) => (
   </div>
 )
 
-const mapStateToPropsA = state => ({
+const mapStateToProps = state => ({
   currentUser: state.user.currentUser,
   hidden: state.cart.hidden,
 })
 
+/*
+  Another way to do this with destructuring.  I ask you: which is less confusing?
 const mapStateToProps = ({user: { currentUser }, cart: { hidden }}) => ({
   currentUser,
   hidden,
 })
+*/
+
 
 // connect returns a function that takes a component, so this syntax is correct
 // we could have done:
